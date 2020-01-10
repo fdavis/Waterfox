@@ -14,7 +14,9 @@ before_install:
 - |-
     case $TRAVIS_OS_NAME in
       windows)
-        choco install python2 wget
+        choco install python2
+        ls /C/Python27
+        export PATH=$PATH:"/C/Python27"
         where /?
         wget -q https://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/MozillaBuildSetup-Latest.exe
         MozillaBuildSetup-Latest.exe
