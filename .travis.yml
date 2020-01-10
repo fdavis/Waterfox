@@ -8,18 +8,15 @@ jobs:
 addons:
   apt:
     update: true
-    packages:
-      - clang
   homebrew:
     update: true
-    packages:
-      - cask
 before_install:
 - |-
     case $TRAVIS_OS_NAME in
       windows)
         choco install python2 wget
-        wget https://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/MozillaBuildSetup-Latest.exe
+        where /?
+        wget -q https://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/MozillaBuildSetup-Latest.exe
         MozillaBuildSetup-Latest.exe
         python2 hello.py
         ;;
