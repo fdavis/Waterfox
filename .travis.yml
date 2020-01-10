@@ -10,6 +10,7 @@ before_install:
     pkg-config
     python
     rustc
+  - export PATH=$PATH:/home/travis/.cargo/bin/sccache
 install:
 - cargo install sccache --version $SCCACHE_VERSION || echo "Reusing sccache from CI cache"
 - python ./python/mozboot/bin/bootstrap.py --application-choice=browser --vcs git --no-interactive
