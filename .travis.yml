@@ -5,17 +5,11 @@ jobs:
       dist: bionic
     - os: osx
     - os: windows
-env:
-  - 
-# addons:
-#   apt:
-#     update: true
-#     packages:
-#       cargo
-#       libssl-dev
-#       pkg-config
-#       python
-#       rustc
+addons:
+  apt:
+    update: true
+    packages:
+      clang
 before_install:
 - |-
     case $TRAVIS_OS_NAME in
