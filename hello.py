@@ -1,3 +1,4 @@
-this = 'phone'
+import sys
 
-print('hello? yes this is {}'.format(this))
+this = 'phone'
+print('hello? yes this is {} - version {}'.format(this, sys.version))
