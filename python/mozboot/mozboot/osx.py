@@ -509,9 +509,11 @@ class OSXBootstrapper(BaseBootstrapper):
         return active_name.lower()
 
     def ensure_clang_static_analysis_package(self, state_dir, checkout_root):
-        from mozboot import static_analysis
-        self.install_toolchain_static_analysis(
-            state_dir, checkout_root, static_analysis.MACOS_CLANG_TIDY)
+        pass
+        # yet another artifact install pass
+#         from mozboot import static_analysis
+#         self.install_toolchain_static_analysis(
+#             state_dir, checkout_root, static_analysis.MACOS_CLANG_TIDY)
 
     def ensure_stylo_packages(self, state_dir, checkout_root):
         from mozboot import stylo
@@ -519,7 +521,7 @@ class OSXBootstrapper(BaseBootstrapper):
         # seeing many compiler errors so we use our own toolchain clang.
         if 'mobile_android' in self.application:
             self.install_toolchain_artifact(state_dir, checkout_root, stylo.MACOS_CLANG)
-        self.install_toolchain_artifact(state_dir, checkout_root, stylo.MACOS_CBINDGEN)
+        #self.install_toolchain_artifact(state_dir, checkout_root, stylo.MACOS_CBINDGEN)
 
     def ensure_nasm_packages(self, state_dir, checkout_root):
         # installed via ensure_browser_packages
@@ -527,8 +529,9 @@ class OSXBootstrapper(BaseBootstrapper):
 
     def ensure_node_packages(self, state_dir, checkout_root):
         # XXX from necessary?
-        from mozboot import node
-        self.install_toolchain_artifact(state_dir, checkout_root, node.OSX)
+        #from mozboot import node
+        #self.install_toolchain_artifact(state_dir, checkout_root, node.OSX)
+        pass
 
     def install_homebrew(self):
         print(PACKAGE_MANAGER_INSTALL % ('Homebrew', 'Homebrew', 'Homebrew', 'brew'))
