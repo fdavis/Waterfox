@@ -5,14 +5,12 @@ env:
 before_install:
   >-
     sudo apt-get -y install
-    alsa
-    clang
     libssl-dev
     pkg-config
     python
     rustc
-    autoconf2.13 build-essential nodejs python-dev python-pip python-setuptools unzip uuid zip
 install:
+- python ./python/mozboot/bin/bootstrap.py --application-choice=browser --vcs git -r git@github.com:fdavis/Waterfox
 - cargo install sccache --version $SCCACHE_VERSION || echo "Reusing sccache from CI cache"
 script: 
   - ./mach build -v
