@@ -11,6 +11,7 @@ before_install:
     pkg-config
     python
     rustc
+    autoconf2.13 build-essential nodejs python-dev python-pip python-setuptools unzip uuid zip
 install:
 - cargo install sccache --version $SCCACHE_VERSION || echo "Reusing sccache from CI cache"
 script: 
