@@ -9,8 +9,8 @@ addons:
   apt:
     update: true
     packages:
-      clang-6.0
-      llvm-6.0
+#       clang-6.0
+      llvm-7
   homebrew:
     update: true
     packages:
