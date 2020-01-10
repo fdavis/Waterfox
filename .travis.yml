@@ -10,20 +10,25 @@ addons:
     update: true
   homebrew:
     update: true
+    packages:
+      - watchman
 before_install:
 - |-
     case $TRAVIS_OS_NAME in
       windows)
-        choco install python2
+        choco install python2 7zip.install
         ls /C/Python27
         export PATH=$PATH:"/C/Python27"
-        where /?
+        where python*
+        where 7zip*
+        where C:\Python27
         wget -q https://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/MozillaBuildSetup-Latest.exe
         MozillaBuildSetup-Latest.exe
-        python2 hello.py
+        python -V
+        python hello.py
         ;;
       osx)
-        brew install wget
+        cat /etc/issue
         ;;
       linux)
         cat /etc/issue
