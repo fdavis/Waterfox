@@ -1,3 +1,3 @@
 this = 'phone'
 
-print(f'hello? yes this is {this}')
+print('hello? yes this is {}'.format(this))
