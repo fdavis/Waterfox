@@ -1,15 +1,23 @@
-dist: bionic
-language: bash
+language: generic
+jobs:
+  include:
+    - os: linux
+      dist: bionic
+      env: SCCACHE_VERSION=0.2.12
+    - os: osx
+    - os: windows
 env:
-  - SCCACHE_VERSION=0.2.12 SHELL=/bin/bash
+  - 
+addons:
+  apt:
+    update: true
+    packages:
+      cargo
+      libssl-dev
+      pkg-config
+      python
+      rustc
 before_install:
-  >-
-    sudo apt-get -y install
-    cargo
-    libssl-dev
-    pkg-config
-    python
-    rustc
   - export PATH=$PATH:/home/travis/.cargo/bin/sccache
 install:
 - cargo install sccache --version $SCCACHE_VERSION || echo "Reusing sccache from CI cache"
