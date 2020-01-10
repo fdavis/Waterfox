@@ -2,12 +2,13 @@ language: generic
 jobs:
   include:
     - os: linux
-      dist: bionic
     - os: osx
     - os: windows
 addons:
   apt:
     update: true
+    packages:
+      clang
   homebrew:
     update: true
 before_install:
