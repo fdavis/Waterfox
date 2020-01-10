@@ -9,7 +9,7 @@ before_install:
     python
     rustc
 install:
-- python ./python/mozboot/bin/bootstrap.py --application-choice=browser --vcs git -r git@github.com:fdavis/Waterfox
+- python ./python/mozboot/bin/bootstrap.py --application-choice=browser --vcs git --no-interactive
 - cargo install sccache --version $SCCACHE_VERSION || echo "Reusing sccache from CI cache"
 script: 
   - ./mach build -v
