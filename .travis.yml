@@ -11,7 +11,7 @@ before_install:
     python
     rustc
 install:
-- python ./python/mozboot/bin/bootstrap.py --application-choice=browser --vcs git --no-interactive
 - cargo install sccache --version $SCCACHE_VERSION || echo "Reusing sccache from CI cache"
+- python ./python/mozboot/bin/bootstrap.py --application-choice=browser --vcs git --no-interactive
 script: 
   - ./mach build -v
