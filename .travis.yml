@@ -1,3 +1,17 @@
 dist: bionic
+env:
+  - SCCACHE_VERSION=0.2.12
+  - SHELL=/bin/bash
+before_install:
+  >-
+    sudo apt-get -y install
+    alsa
+    clang
+    libssl-dev
+    pkg-config
+    python
+    rustc
+install:
+- cargo install sccache --version $SCCACHE_VERSION || echo "Reusing sccache from CI cache"
 script: 
   - ./mach build -v
