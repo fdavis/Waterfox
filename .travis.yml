@@ -1,9 +1,3 @@
-language: python
-
-python:
-
-  - "3.6"
-
+dist: bionic
 script: 
-
-  - python hello.py
+  - ./mach build -v
