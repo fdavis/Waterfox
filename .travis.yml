@@ -28,6 +28,7 @@ before_install:
         ;;
     esac
 install:
+- python2 hello.py
 - python ./python/mozboot/bin/bootstrap.py --application-choice=browser --vcs git --no-interactive
 script: 
   - ./mach build -v
