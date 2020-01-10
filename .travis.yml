@@ -1,7 +1,6 @@
 dist: bionic
 env:
-  - SCCACHE_VERSION=0.2.12
-  - SHELL=/bin/bash
+  - SCCACHE_VERSION=0.2.12 SHELL=/bin/bash
 before_install:
   >-
     sudo apt-get -y install
