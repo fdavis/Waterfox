@@ -22,12 +22,13 @@ before_install:
       windows)
         choco install python2
         pwd
-        ls /C/Python27
+        ls -R /C/Python27
         export PATH=$PATH:"/C/Python27"
         wget -q https://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/MozillaBuildSetup-Latest.exe
-        MozillaBuildSetup-Latest.exe
+        MozillaBuildSetup-Latest
         python -V
         python hello.py
+        where 7zip*
         ;;
       osx)
         python hello.py
