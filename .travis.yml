@@ -20,12 +20,12 @@ before_install:
 - |-
     case $TRAVIS_OS_NAME in
       windows)
-        choco install python2
+        choco install python2 7zip
         pwd
         ls -R /C/Python27
         export PATH=$PATH:"/C/Python27"
         wget -q https://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/MozillaBuildSetup-Latest.exe
-        MozillaBuildSetup-Latest
+        ./MozillaBuildSetup-Latest
         python -V
         python hello.py
         where 7zip*
@@ -34,7 +34,7 @@ before_install:
         python hello.py
         ;;
       linux)
-        apt-get purge -y llvm-6.0 clang-6.0
+        sudo apt-get purge -y llvm-6.0 clang-6.0
         python hello.py
         ;;
     esac
