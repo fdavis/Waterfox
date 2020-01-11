@@ -527,8 +527,9 @@ class OSXBootstrapper(BaseBootstrapper):
 
     def ensure_node_packages(self, state_dir, checkout_root):
         # XXX from necessary?
-        from mozboot import node
-        self.install_toolchain_artifact(state_dir, checkout_root, node.OSX)
+        #from mozboot import node
+        #self.install_toolchain_artifact(state_dir, checkout_root, node.OSX)
+        pass
 
     def install_homebrew(self):
         print(PACKAGE_MANAGER_INSTALL % ('Homebrew', 'Homebrew', 'Homebrew', 'brew'))
