@@ -10,6 +10,7 @@ addons:
     update: true
     packages:
 #       clang-6.0
+      clang-7
       llvm-7
   homebrew:
     update: true
@@ -32,6 +33,7 @@ before_install:
         python hello.py
         ;;
       linux)
+        apt-get purge -y llvm-6.0 clang-6.0
         python hello.py
         ;;
     esac
