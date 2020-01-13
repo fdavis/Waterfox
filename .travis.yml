@@ -43,6 +43,6 @@ before_install:
         ;;
     esac
 install:
-- python ./python/mozboot/bin/bootstrap.py --application-choice=browser --vcs git --no-interactive
+- travis_wait 30 python ./python/mozboot/bin/bootstrap.py --application-choice=browser --vcs git --no-interactive | tail -n 500
 script: 
-  - ./mach build -v
+  - travis_wait 90 ./mach build -v
