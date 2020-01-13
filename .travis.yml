@@ -24,7 +24,11 @@ before_install:
         pwd
         ls -R /C/Python27
         export PATH=$PATH:"/C/Python27"
+        wget -N http://ftp.mozilla.org/pub/mozilla.o...tup-Latest.zip
+        7z x -aoa MozillaBuildSetup-Latest.zip -omozilla-build
+        cd repo; rm `find . -name 'config.cache'`;
         travis_retry wget -q https://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/MozillaBuildSetup-Latest.exe
+        travis_wait 30 ./MozillaBuildSetup-Latest /?
         travis_wait 30 ./MozillaBuildSetup-Latest /S
         python -V
         python hello.py
