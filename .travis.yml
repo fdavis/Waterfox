@@ -15,6 +15,7 @@ addons:
   homebrew:
     update: true
     packages:
+      - python@3
       - watchman
 before_install:
 - |-
