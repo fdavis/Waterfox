@@ -25,7 +25,7 @@ before_install:
         ls -R /C/Python27
         export PATH=$PATH:"/C/Python27"
         travis_retry wget -q https://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/MozillaBuildSetup-Latest.exe
-        ./MozillaBuildSetup-Latest
+        travis_wait 30 ./MozillaBuildSetup-Latest
         python -V
         python hello.py
         where 7zip*
